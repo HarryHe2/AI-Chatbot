@@ -1,0 +1,78 @@
+version: "2.0"
+
+stories:
+
+- story: do not want to order
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: deny
+  - action: utter_bye
+
+
+- story: want to order
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: confirm
+  - action: utter_confirm
+  - intent: order_food
+    entities:
+    - food_num: 2
+    - food: "Cheeseburger"
+  - action: food_form
+  - active_loop: food_form
+
+
+- story: yes_drinks
+  steps:
+  - action: utter_ask_drinks
+  - intent: order_drinks
+    entities:
+    - drinks_num: 3
+    - drinks: "coke"
+  - action: drinks_form
+  - active_loop: drinks_form
+
+
+- story: no_drinks
+  steps:
+  - action: utter_ask_drinks
+  - intent: deny
+  - action: action_show_order
+
+
+
+
+
+- story: add order
+  steps:
+  - action: action_show_order
+  - intent: add
+  - action: add_form
+  - active_loop: add_form
+
+
+- story: change order
+  steps:
+  - action: action_show_order
+  - intent: change
+  - action: change_form
+  - active_loop: change_form
+
+
+- story: remove order
+  steps:
+  - action: action_show_order
+  - intent: remove
+  - action: remove_form
+  - active_loop: remove_form
+
+
+
+- story: revenue
+  steps:
+  - action: utter_verify_ID
+  - intent: enter_ID
+  - action: ID_form
+  - active_loop: ID_form

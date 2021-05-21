@@ -1,0 +1,133 @@
+version: "2.0"
+
+rules:
+
+- rule: order_food
+  steps:
+  - intent: order_food
+  - action: food_form
+  - active_loop: food_form
+
+- rule: submit_food and ask_drinks
+  condition:
+  - active_loop: food_form
+  steps:
+  - action: food_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_ask_drinks
+
+
+- rule: yes_drinks
+  steps:
+  - intent: order_drinks
+  - action: drinks_form
+  - active_loop: drinks_form
+
+- rule: submit_drinks
+  condition:
+  - active_loop: drinks_form
+  steps:
+  - action: drinks_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_show_order
+
+
+- rule: add order
+  steps:
+  - intent: add
+  - action: add_form
+  - active_loop: add_form
+
+- rule: submit add
+  condition:
+  - active_loop: add_form
+  steps:
+  - action: add_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_add_order
+  - action: action_show_order
+
+
+- rule: change order
+  steps:
+  - intent: change
+  - action: change_form
+  - active_loop: change_form
+
+- rule: submit change
+  condition:
+  - active_loop: change_form
+  steps:
+  - action: change_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_change_order
+  - action: action_show_order
+
+
+- rule: remove order
+  steps:
+  - intent: remove
+  - action: remove_form
+  - active_loop: remove_form
+
+- rule: submit remove
+  condition:
+  - active_loop: remove_form
+  steps:
+  - action: remove_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_remove_order
+  - action: action_show_order
+
+
+- rule: confirm order
+  steps:
+  - action: action_show_order
+  - intent: confirm
+  - action: action_order_confirmed
+  - action: utter_order_confirmed
+
+- rule: checkout order
+  steps:
+  - action: utter_order_confirmed
+  - intent: paid
+  - action: utter_goodbye
+
+- rule: deny order
+  steps:
+  - action: action_show_order
+  - intent: deny
+  - action: utter_cancel_order
+
+
+- rule: check revenue
+  steps:
+  - intent: revenue
+  - action: utter_verify_ID
+
+
+- rule: enter_ID
+  steps:
+  - intent: enter_ID
+  - action: ID_form
+  - active_loop: ID_form
+
+- rule: verify_ID
+  condition:
+  - active_loop: ID_form
+  steps:
+  - action: ID_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_show_revenue

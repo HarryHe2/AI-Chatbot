@@ -1,0 +1,4 @@
+forms:
+  food_form:
+    food_name:
+    - type: from_text

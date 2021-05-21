@@ -1,0 +1,186 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet:
+    use_entities: true
+- confirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- order_food:
+    use_entities:
+    - food
+    - food_num
+- order_drinks:
+    use_entities:
+    - drinks
+    - drinks_num
+- paid:
+    use_entities: true
+- revenue:
+    use_entities: true
+- enter_ID:
+    use_entities: true
+- add:
+    use_entities: true
+- change:
+    use_entities: true
+- remove:
+    use_entities: true
+entities:
+- food
+- food_num
+- drinks
+- drinks_num
+- ID
+- change
+- change_num
+- add
+- add_num
+- remove
+- remove_num
+slots:
+  food:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  food_num:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  drinks:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  drinks_num:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  TOTAL:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  revenue:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  ID:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  change:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  change_num:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  add:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  add_num:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  remove:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  remove_num:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  requested_slot:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+responses:
+  utter_greet:
+  - image: https://i.postimg.cc/jqg0bf0y/b14dadd5b53c83de7b6e99e18bcb4bb.jpg
+    text: Hi! Do you want to start order now?
+  utter_confirm:
+  - text: Sure! What can I get for you?
+  utter_ask_drinks:
+  - text: Any drinks?
+  utter_cancel_order:
+  - text: No worries! Your order has been cancelled.
+  utter_order_confirmed:
+  - text: |-
+      Great! It is {TOTAL}. 
+       Please complete the payment on the following link ___________________________________ 
+       Reply 'done' or 'paid' to finish the order
+  utter_bye:
+  - text: No worries! Bye!
+  utter_goodbye:
+  - text: Thanks for your order! See you next time!
+  utter_verify_ID:
+  - text: Please enter your admin code to verify your ID
+actions:
+- action_order_confirmed
+- action_show_order
+- action_show_revenue
+- action_add_order
+- action_change_order
+- action_remove_order
+- action_set_slot
+forms:
+  food_form:
+    food:
+    - entity: food
+      type: from_entity
+    food_num:
+    - entity: food_num
+      type: from_entity
+  drinks_form:
+    drinks:
+    - entity: drinks
+      type: from_entity
+    drinks_num:
+    - entity: drinks_num
+      type: from_entity
+  ID_form:
+    ID:
+    - entity: ID
+      type: from_entity
+  change_form:
+    change:
+    - entity: change
+      type: from_entity
+    change_num:
+    - entity: change_num
+      type: from_entity
+  add_form:
+    add:
+    - entity: add
+      type: from_entity
+    add_num:
+    - entity: add_num
+      type: from_entity
+  remove_form:
+    remove:
+    - entity: remove
+      type: from_entity
+    remove_num:
+    - entity: remove_num
+      type: from_entity
+e2e_actions: []

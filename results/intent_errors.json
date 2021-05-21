@@ -1,0 +1,26 @@
+[
+  {
+    "text": "two",
+    "intent": "change",
+    "intent_prediction": {
+      "name": "add",
+      "confidence": 0.25546330213546753
+    }
+  },
+  {
+    "text": "two",
+    "intent": "remove",
+    "intent_prediction": {
+      "name": "add",
+      "confidence": 0.25546330213546753
+    }
+  },
+  {
+    "text": "three",
+    "intent": "order_food",
+    "intent_prediction": {
+      "name": "remove",
+      "confidence": 0.2756407558917999
+    }
+  }
+]

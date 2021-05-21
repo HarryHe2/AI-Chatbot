@@ -1,0 +1,115 @@
+version: "2.0"
+nlu:
+- intent: paid
+  examples: |
+    - paid
+- intent: confirm
+  examples: |
+    - sure
+    - of course
+- intent: deny
+  examples: |
+    - im good
+- intent: greet
+  examples: |
+    - hello
+- intent: enter_ID
+  examples: |
+    - passcode
+    - [imtheboss](ID)
+- intent: revenue
+  examples: |
+    - today revenue
+- intent: add
+  examples: |
+    - add [3](add_num) [Coke](add)
+    - add [one]{"entity": "add_num", "value": "1"} [Sprite](add)
+    - add [one]{"entity": "add_num", "value": "1"} [Garden Salad](add)
+    - add [4](add_num) [Big Mac](add)
+    - add [3](add_num) [Big Mac](add)
+    - [five]{"entity": "add_num", "value": "5"}
+- intent: change
+  examples: |
+    - change [one]{"entity": "change_num", "value": "1"} [Garden Salad](change) into [one]{"entity": "change_num", "value": "1"} [Cheeseburger](change)
+    - change [5](change_num) [Coke](change) into [1](change_num) [Sprite](change)
+    - change [4](change_num) [Coke](change) into [1](change_num) [Sprite](change)
+    - change [one]{"entity": "change_num", "value": "1"} [Sprite](change) into [one]{"entity": "change_num", "value": "1"} [Coke](change)
+    - [two]{"entity": "change_num", "value": "2"}
+    - change [one]{"entity": "change_num", "value": "1"} [McSpicy](change) into [one]{"entity": "change_num", "value": "1"} [Cheeseburger](change)
+    - change [one]{"entity": "change_num", "value": "1"} [Chicken Nuggets](change) into [one]{"entity": "change_num", "value": "1"} [Cheeseburger](change)
+- intent: remove
+  examples: |
+    - delete [5](remove_num) [Big Mac](remove)
+    - remove [5](remove_num) [Coke](remove)
+    - remove [one]{"entity": "remove_num", "value": "1"} [Big Mac](remove)
+    - remove [1](remove_num) [Coke](remove)
+    - remove [one]{"entity": "remove_num", "value": "1"} [Garden Salad](remove)
+    - [two]{"entity": "remove_num", "value": "2"}
+    - remove [one]{"entity": "remove_num", "value": "1"} [Chicken Salad](remove)
+    - remove [one]{"entity": "remove_num", "value": "1"} [Sprite](remove)
+    - remove [4](remove_num) [Big Mac](remove)
+    - delete [1](remove_num) [Coke](remove)
+    - delete [one]{"entity": "remove_num", "value": "1"} [Classic Angus](remove)
+- intent: order_drinks
+  examples: |
+    - i want to get [2](drinks_num) [coke]{"entity": "drinks", "value": "Coke"}
+    - i want [1](drinks_num) [coke]{"entity": "drinks", "value": "Coke"}
+    - i want [5](drinks_num) [coke]{"entity": "drinks", "value": "Coke"}
+    - [one]{"entity": "drinks_num", "value": "1"} [Ice Latte](drinks)
+    - i want [one]{"entity": "drinks_num", "value": "1"} [Strawberry Sundae](drinks)
+    - [one]{"entity": "drinks_num", "value": "1"} [Coke](drinks)
+    - i would like to get [one]{"entity": "drinks_num", "value": "1"} [Strawberry Sundae](drinks)
+    - i would like to have [one]{"entity": "drinks_num", "value": "1"} [Sprite](drinks)
+    - i want to get [one]{"entity": "drinks_num", "value": "1"} [Apple Juice](drinks)
+    - i want [one]{"entity": "drinks_num", "value": "1"} [coke]{"entity": "drinks", "value": "Coke"}
+    - i would like to order [one]{"entity": "drinks_num", "value": "1"} [Strawberry Sundae](drinks)
+    - i would like to have [one]{"entity": "drinks_num", "value": "1"} [Strawberry Sundae](drinks)
+- intent: order_food
+  examples: |
+    - i would like to have [four]{"entity": "food_num", "value": "4"} [Classic Angus](food)
+    - i want [2](food_num) [Big Mac](food)
+    - i want to get [three]{"entity": "food_num", "value": "3"} [Fries](food)
+    - i want to order [two]{"entity": "food_num", "value": "2"} [Cheeseburger](food)
+    - i want to order [two]{"entity": "food_num", "value": "2"} [Classic Angus](food)
+    - [one]{"entity": "food_num", "value": "1"} [Chicken Nuggets](food)
+    - i want to get [three]{"entity": "food_num", "value": "3"} [Chicken Nuggets](food)
+    - [one]{"entity": "food_num", "value": "1"} [Fries](food)
+    - [one]{"entity": "food_num", "value": "1"} [Hash Brown](food)
+    - i would like to get [five]{"entity": "food_num", "value": "5"} [Hash Brown](food)
+    - i want to get [three]{"entity": "food_num", "value": "3"} [McSpicy](food)
+    - i want to order [two]{"entity": "food_num", "value": "2"} [Fries](food)
+    - i would like to order [one]{"entity": "food_num", "value": "1"} [Cheeseburger](food)
+    - i would like to have [four]{"entity": "food_num", "value": "4"} [Hash Brown](food)
+    - i would like to get [five]{"entity": "food_num", "value": "5"} [Chicken Nuggets](food)
+    - i want to order [two]{"entity": "food_num", "value": "2"} [Hash Brown](food)
+    - i would like to order [one]{"entity": "food_num", "value": "1"} [Classic Angus](food)
+    - i would like to order [one]{"entity": "food_num", "value": "1"} [Hash Brown](food)
+    - [three]{"entity": "food_num", "value": "3"}
+    - [one]{"entity": "food_num", "value": "1"} [Classic Angus](food)
+- synonym: '1'
+  examples: |
+    - one
+- synonym: '2'
+  examples: |
+    - two
+- synonym: '3'
+  examples: |
+    - three
+- synonym: '4'
+  examples: |
+    - four
+- synonym: '5'
+  examples: |
+    - five
+- synonym: Coke
+  examples: |
+    - coke
+- regex: change_num
+  examples: |
+    - \d{1,2}
+- regex: drinks_num
+  examples: |
+    - \d{1,2}
+- regex: food_num
+  examples: |
+    - \d{1,2}

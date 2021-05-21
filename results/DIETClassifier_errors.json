@@ -1,0 +1,74 @@
+[
+  {
+    "text": "five",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "5",
+        "entity": "add_num"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "drinks_num",
+        "start": 0,
+        "end": 4,
+        "confidence_entity": 0.2629135251045227,
+        "value": "5",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "two",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "2",
+        "entity": "remove_num"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "change_num",
+        "start": 0,
+        "end": 3,
+        "confidence_entity": 0.2884977161884308,
+        "value": "2",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "three",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "3",
+        "entity": "food_num"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "remove_num",
+        "start": 0,
+        "end": 5,
+        "confidence_entity": 0.23940148949623108,
+        "value": "3",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  }
+]

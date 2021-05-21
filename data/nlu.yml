@@ -1,0 +1,390 @@
+version: "2.0"
+nlu:
+
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - good afternoon
+
+- intent: confirm
+  examples: |
+    - yes
+    - y
+    - of course
+    - sure
+    - definitely
+    - yep
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - nah
+    - nope
+    - im good
+    - I'm good
+
+- intent: revenue
+  examples: |
+    - revenue
+    - show me the revenue
+    - what is the revenue
+    - today revenue
+    - revenue for today
+    - can i see the revenue
+    - i want to know the revenue
+    - i want to see the revenue
+
+- intent: enter_ID
+  examples: |
+    - [imtheboss](ID)
+    - imsadhjawe
+    - sdjfhkew
+    - imelliot
+    - passcode
+    - hdifjerotje
+    - erhtuierhti
+
+- intent: paid
+  examples: |
+    - paid
+    - done
+    - all done
+    - completed
+    - finished
+
+- intent: order_food
+  examples: |
+    - [one]{"entity": "food_num", "value": "1"} [Big Mac](food)
+    - i want [one]{"entity": "food_num", "value": "1"} [Big Mac](food)
+    - i want to order [two]{"entity": "food_num", "value": "2"} [Big Mac](food)
+    - i want to get [three]{"entity": "food_num", "value": "3"} [Big Mac](food)
+    - i would like to have [four]{"entity": "food_num", "value": "4"} [Big Mac](food)
+    - i would like to order [one]{"entity": "food_num", "value": "1"} [Big Mac](food)
+    - i would like to get [five]{"entity": "food_num", "value": "5"} [Big Mac](food)
+    - [one]{"entity": "food_num", "value": "1"} [Cheeseburger](food)
+    - i want [one]{"entity": "food_num", "value": "1"} [Cheeseburger](food)
+    - i want to order [two]{"entity": "food_num", "value": "2"} [Cheeseburger](food)
+    - i want to get [three]{"entity": "food_num", "value": "3"} [Cheeseburger](food)
+    - i would like to have [four]{"entity": "food_num", "value": "4"} [Cheeseburger](food)
+    - i would like to order [one]{"entity": "food_num", "value": "1"} [Cheeseburger](food)
+    - i would like to get [five]{"entity": "food_num", "value": "5"} [Cheeseburger](food)
+    - [one]{"entity": "food_num", "value": "1"} [Chicken Nuggets](food)
+    - i want [one]{"entity": "food_num", "value": "1"} [Chicken Nuggets](food)
+    - i want to order [two]{"entity": "food_num", "value": "2"} [Chicken Nuggets](food)
+    - i want to get [three]{"entity": "food_num", "value": "3"} [Chicken Nuggets](food)
+    - i would like to have [four]{"entity": "food_num", "value": "4"} [Chicken Nuggets](food)
+    - i would like to order [one]{"entity": "food_num", "value": "1"} [Chicken Nuggets](food)
+    - i would like to get [five]{"entity": "food_num", "value": "5"} [Chicken Nuggets](food)
+    - [one]{"entity": "food_num", "value": "1"} [Chicken Salad](food)
+    - i want [one]{"entity": "food_num", "value": "1"} [Chicken Salad](food)
+    - i want to order [two]{"entity": "food_num", "value": "2"} [Chicken Salad](food)
+    - i want to get [three]{"entity": "food_num", "value": "3"} [Chicken Salad](food)
+    - i would like to have [four]{"entity": "food_num", "value": "4"} [Chicken Salad](food)
+    - i would like to order [one]{"entity": "food_num", "value": "1"} [Chicken Salad](food)
+    - i would like to get [five]{"entity": "food_num", "value": "5"} [Chicken Salad](food)
+    - [one]{"entity": "food_num", "value": "1"} [Fries](food)
+    - i want [one]{"entity": "food_num", "value": "1"} [Fries](food)
+    - i want to order [two]{"entity": "food_num", "value": "2"} [Fries](food)
+    - i want to get [three]{"entity": "food_num", "value": "3"} [Fries](food)
+    - i would like to have [four]{"entity": "food_num", "value": "4"} [Fries](food)
+    - i would like to order [one]{"entity": "food_num", "value": "1"} [Fries](food)
+    - i would like to get [five]{"entity": "food_num", "value": "5"} [Fries](food)
+    - [one]{"entity": "food_num", "value": "1"} [Apple Pie](food)
+    - i want [one]{"entity": "food_num", "value": "1"} [Apple Pie](food)
+    - i want to order [two]{"entity": "food_num", "value": "2"} [Apple Pie](food)
+    - i want to get [three]{"entity": "food_num", "value": "3"} [Apple Pie](food)
+    - i would like to have [four]{"entity": "food_num", "value": "4"} [Apple Pie](food)
+    - i would like to order [one]{"entity": "food_num", "value": "1"} [Apple Pie](food)
+    - i would like to get [five]{"entity": "food_num", "value": "5"} [Apple Pie](food)
+    - [one]{"entity": "food_num", "value": "1"} [Bacon Angus](food)
+    - i want [one]{"entity": "food_num", "value": "1"} [Bacon Angus](food)
+    - i want to order [two]{"entity": "food_num", "value": "2"} [Bacon Angus](food)
+    - i want to get [three]{"entity": "food_num", "value": "3"} [Bacon Angus](food)
+    - i would like to have [four]{"entity": "food_num", "value": "4"} [Bacon Angus](food)
+    - i would like to order [one]{"entity": "food_num", "value": "1"} [Bacon Angus](food)
+    - i would like to get [five]{"entity": "food_num", "value": "5"} [Bacon Angus](food)
+    - [one]{"entity": "food_num", "value": "1"} [Classic Angus](food)
+    - i want [one]{"entity": "food_num", "value": "1"} [Classic Angus](food)
+    - i want to order [two]{"entity": "food_num", "value": "2"} [Classic Angus](food)
+    - i want to get [three]{"entity": "food_num", "value": "3"} [Classic Angus](food)
+    - i would like to have [four]{"entity": "food_num", "value": "4"} [Classic Angus](food)
+    - i would like to order [one]{"entity": "food_num", "value": "1"} [Classic Angus](food)
+    - i would like to get [five]{"entity": "food_num", "value": "5"} [Classic Angus](food)
+    - [one]{"entity": "food_num", "value": "1"} [Garden Salad](food)
+    - i want [one]{"entity": "food_num", "value": "1"} [Garden Salad](food)
+    - i want to order [two]{"entity": "food_num", "value": "2"} [Garden Salad](food)
+    - i want to get [three]{"entity": "food_num", "value": "3"} [Garden Salad](food)
+    - i would like to have [four]{"entity": "food_num", "value": "4"} [Garden Salad](food)
+    - i would like to order [one]{"entity": "food_num", "value": "1"} [Garden Salad](food)
+    - i would like to get [five]{"entity": "food_num", "value": "5"} [Garden Salad](food)
+    - [one]{"entity": "food_num", "value": "1"} [McSpicy](food)
+    - i want [one]{"entity": "food_num", "value": "1"} [McSpicy](food)
+    - i want to order [two]{"entity": "food_num", "value": "2"} [McSpicy](food)
+    - i want to get [three]{"entity": "food_num", "value": "3"} [McSpicy](food)
+    - i would like to have [four]{"entity": "food_num", "value": "4"} [McSpicy](food)
+    - i would like to order [one]{"entity": "food_num", "value": "1"} [McSpicy](food)
+    - i would like to get [five]{"entity": "food_num", "value": "5"} [McSpicy](food)
+    - [one]{"entity": "food_num", "value": "1"} [Hash Brown](food)
+    - i want [one]{"entity": "food_num", "value": "1"} [Hash Brown](food)
+    - i want to order [two]{"entity": "food_num", "value": "2"} [Hash Brown](food)
+    - i want to get [three]{"entity": "food_num", "value": "3"} [Hash Brown](food)
+    - i would like to have [four]{"entity": "food_num", "value": "4"} [Hash Brown](food)
+    - i would like to order [one]{"entity": "food_num", "value": "1"} [Hash Brown](food)
+    - i would like to get [five]{"entity": "food_num", "value": "5"} [Hash Brown](food)
+    - [one]{"entity": "food_num", "value": "1"}
+    - [two]{"entity": "food_num", "value": "2"}
+    - [three]{"entity": "food_num", "value": "3"}
+    - [four]{"entity": "food_num", "value": "4"}
+    - [five]{"entity": "food_num", "value": "5"}
+    - [1](food_num) [Big Mac](food)
+    - i want [1](food_num) [Big Mac](food)
+    - i want to order [1](food_num) [Big Mac](food)
+    - i want to get [1](food_num) [Big Mac](food)
+    - [2](food_num) [Big Mac](food)
+    - i want [2](food_num) [Big Mac](food)
+    - i want to order [2](food_num) [Big Mac](food)
+    - i want to get [2](food_num) [Big Mac](food)
+    - [3](food_num) [Big Mac](food)
+    - i want [3](food_num) [Big Mac](food)
+    - i want to order [3](food_num) [Big Mac](food)
+    - i want to get [3](food_num) [Big Mac](food)
+    - [4](food_num) [Big Mac](food)
+    - i want [4](food_num) [Big Mac](food)
+    - i want to order [4](food_num) [Big Mac](food)
+    - i want to get [4](food_num) [Big Mac](food)
+    - [5](food_num) [Big Mac](food)
+    - i want [5](food_num) [Big Mac](food)
+    - i want to order [5](food_num) [Big Mac](food)
+    - i want to get [5](food_num) [Big Mac](food)
+
+- intent: order_drinks
+  examples: |
+    - [one]{"entity": "drinks_num", "value": "1"} [Coke](drinks)
+    - i want [one]{"entity": "drinks_num", "value": "1"} [coke]{"entity": "drinks", "value": "Coke"}
+    - i want to order [one]{"entity": "drinks_num", "value": "1"} [coke]{"entity": "drinks", "value": "Coke"}
+    - i want to get [one]{"entity": "drinks_num", "value": "1"} [coke]{"entity": "drinks", "value": "Coke"}
+    - i would like to have [one]{"entity": "drinks_num", "value": "1"} [coke]{"entity": "drinks", "value": "Coke"}
+    - i would like to order [one]{"entity": "drinks_num", "value": "1"} [coke]{"entity": "drinks", "value": "Coke"}
+    - i would like to get [one]{"entity": "drinks_num", "value": "1"} [coke]{"entity": "drinks", "value": "Coke"}
+    - [one]{"entity": "drinks_num", "value": "1"} [Sprite](drinks)
+    - i want [one]{"entity": "drinks_num", "value": "1"} [Sprite](drinks)
+    - i want to order [one]{"entity": "drinks_num", "value": "1"} [Sprite](drinks)
+    - i want to get [one]{"entity": "drinks_num", "value": "1"} [Sprite](drinks)
+    - i would like to have [one]{"entity": "drinks_num", "value": "1"} [Sprite](drinks)
+    - i would like to order [one]{"entity": "drinks_num", "value": "1"} [Sprite](drinks)
+    - i would like to get [one]{"entity": "drinks_num", "value": "1"} [Sprite](drinks)
+    - [one]{"entity": "drinks_num", "value": "1"} [Ice Latte](drinks)
+    - i want [one]{"entity": "drinks_num", "value": "1"} [Ice Latte](drinks)
+    - i want to order [one]{"entity": "drinks_num", "value": "1"} [Ice Latte](drinks)
+    - i want to get [one]{"entity": "drinks_num", "value": "1"} [Ice Latte](drinks)
+    - i would like to have [one]{"entity": "drinks_num", "value": "1"} [Ice Latte](drinks)
+    - i would like to order [one]{"entity": "drinks_num", "value": "1"} [Ice Latte](drinks)
+    - i would like to get [one]{"entity": "drinks_num", "value": "1"} [Ice Latte](drinks)
+    - [one]{"entity": "drinks_num", "value": "1"} [Apple Juice](drinks)
+    - i want [one]{"entity": "drinks_num", "value": "1"} [Apple Juice](drinks)
+    - i want to order [one]{"entity": "drinks_num", "value": "1"} [Apple Juice](drinks)
+    - i want to get [one]{"entity": "drinks_num", "value": "1"} [Apple Juice](drinks)
+    - i would like to have [one]{"entity": "drinks_num", "value": "1"} [Apple Juice](drinks)
+    - i would like to order [one]{"entity": "drinks_num", "value": "1"} [Apple Juice](drinks)
+    - i would like to get [one]{"entity": "drinks_num", "value": "1"} [Apple Juice](drinks)
+    - [one]{"entity": "drinks_num", "value": "1"} [Strawberry Sundae](drinks)
+    - i want [one]{"entity": "drinks_num", "value": "1"} [Strawberry Sundae](drinks)
+    - i want to order [one]{"entity": "drinks_num", "value": "1"} [Strawberry Sundae](drinks)
+    - i want to get [one]{"entity": "drinks_num", "value": "1"} [Strawberry Sundae](drinks)
+    - i would like to have [one]{"entity": "drinks_num", "value": "1"} [Strawberry Sundae](drinks)
+    - i would like to order [one]{"entity": "drinks_num", "value": "1"} [Strawberry Sundae](drinks)
+    - i would like to get [one]{"entity": "drinks_num", "value": "1"} [Strawberry Sundae](drinks)
+    - [one]{"entity": "drinks_num", "value": "1"}
+    - [two]{"entity": "drinks_num", "value": "2"}
+    - [three]{"entity": "drinks_num", "value": "3"}
+    - [four]{"entity": "drinks_num", "value": "4"}
+    - [five]{"entity": "drinks_num", "value": "5"}
+    - [1](drinks_num) [Coke](drinks)
+    - i want [1](drinks_num) [coke]{"entity": "drinks", "value": "Coke"}
+    - i want to order [1](drinks_num) [coke]{"entity": "drinks", "value": "Coke"}
+    - i want to get [1](drinks_num) [coke]{"entity": "drinks", "value": "Coke"}
+    - [2](drinks_num) [Coke](drinks)
+    - i want [2](drinks_num) [coke]{"entity": "drinks", "value": "Coke"}
+    - i want to order [2](drinks_num) [coke]{"entity": "drinks", "value": "Coke"}
+    - i want to get [2](drinks_num) [coke]{"entity": "drinks", "value": "Coke"}
+    - [3](drinks_num) [Coke](drinks)
+    - i want [3](drinks_num) [coke]{"entity": "drinks", "value": "Coke"}
+    - i want to order [3](drinks_num) [coke]{"entity": "drinks", "value": "Coke"}
+    - i want to get [3](drinks_num) [coke]{"entity": "drinks", "value": "Coke"}
+    - [4](drinks_num) [Coke](drinks)
+    - i want [4](drinks_num) [coke]{"entity": "drinks", "value": "Coke"}
+    - i want to order [4](drinks_num) [coke]{"entity": "drinks", "value": "Coke"}
+    - i want to get [4](drinks_num) [coke]{"entity": "drinks", "value": "Coke"}
+    - [5](drinks_num) [Coke](drinks)
+    - i want [5](drinks_num) [coke]{"entity": "drinks", "value": "Coke"}
+    - i want to order [5](drinks_num) [coke]{"entity": "drinks", "value": "Coke"}
+    - i want to get [5](drinks_num) [coke]{"entity": "drinks", "value": "Coke"}
+
+- intent: add
+  examples: |
+    - add [one]{"entity": "add_num", "value": "1"} [Big Mac](add)
+    - add [one]{"entity": "add_num", "value": "1"} [Cheeseburger](add)
+    - add [one]{"entity": "add_num", "value": "1"} [Chicken Nuggets](add)
+    - add [one]{"entity": "add_num", "value": "1"} [Chicken Salad](add)
+    - add [one]{"entity": "add_num", "value": "1"} [Fries](add)
+    - add [one]{"entity": "add_num", "value": "1"} [Apple Pie](add)
+    - add [one]{"entity": "add_num", "value": "1"} [Bacon Angus](add)
+    - add [one]{"entity": "add_num", "value": "1"} [Classic Angus](add)
+    - add [one]{"entity": "add_num", "value": "1"} [Garden Salad](add)
+    - add [one]{"entity": "add_num", "value": "1"} [McSpicy](add)
+    - add [one]{"entity": "add_num", "value": "1"} [Hash Brown](add)
+    - add [1](add_num) [Big Mac](add)
+    - add [2](add_num) [Big Mac](add)
+    - add [3](add_num) [Big Mac](add)
+    - add [4](add_num) [Big Mac](add)
+    - add [5](add_num) [Big Mac](add)
+    - add [one]{"entity": "add_num", "value": "1"} [Coke](add)
+    - add [one]{"entity": "add_num", "value": "1"} [Sprite](add)
+    - add [one]{"entity": "add_num", "value": "1"} [Ice Latte](add)
+    - add [one]{"entity": "add_num", "value": "1"} [Apple Juice](add)
+    - add [one]{"entity": "add_num", "value": "1"} [Strawberry Sundae](add)
+    - add [1](add_num) [Coke](add)
+    - add [2](add_num) [Coke](add)
+    - add [3](add_num) [Coke](add)
+    - add [4](add_num) [Coke](add)
+    - add [5](add_num) [Coke](add)
+    - [one]{"entity": "add_num", "value": "1"}
+    - [two]{"entity": "add_num", "value": "2"}
+    - [three]{"entity": "add_num", "value": "3"}
+    - [four]{"entity": "add_num", "value": "4"}
+    - [five]{"entity": "add_num", "value": "5"}
+
+- intent: change
+  examples: |
+    - change [one]{"entity": "change_num", "value": "1"} [Big Mac](change) into [one]{"entity": "change_num", "value": "1"} [Cheeseburger](change)
+    - change [one]{"entity": "change_num", "value": "1"} [Cheeseburger](change) into [one]{"entity": "change_num", "value": "1"} [Big Mac](change)
+    - change [one]{"entity": "change_num", "value": "1"} [Chicken Nuggets](change) into [one]{"entity": "change_num", "value": "1"} [Cheeseburger](change)
+    - change [one]{"entity": "change_num", "value": "1"} [Chicken Salad](change) into [one]{"entity": "change_num", "value": "1"} [Cheeseburger](change)
+    - change [one]{"entity": "change_num", "value": "1"} [Fries](change) into [one]{"entity": "change_num", "value": "1"} [Cheeseburger](change)
+    - change [one]{"entity": "change_num", "value": "1"} [Apple Pie](change) into [one]{"entity": "change_num", "value": "1"} [Cheeseburger](change)
+    - change [one]{"entity": "change_num", "value": "1"} [Bacon Angus](change) into [one]{"entity": "change_num", "value": "1"} [Cheeseburger](change)
+    - change [one]{"entity": "change_num", "value": "1"} [Classic Angus](change) into [one]{"entity": "change_num", "value": "1"} [Cheeseburger](change)
+    - change [one]{"entity": "change_num", "value": "1"} [Garden Salad](change) into [one]{"entity": "change_num", "value": "1"} [Cheeseburger](change)
+    - change [one]{"entity": "change_num", "value": "1"} [McSpicy](change) into [one]{"entity": "change_num", "value": "1"} [Cheeseburger](change)
+    - change [one]{"entity": "change_num", "value": "1"} [Hash Brown](change) into [one]{"entity": "change_num", "value": "1"} [Cheeseburger](change)
+    - change [1](change_num) [Big Mac](change) into [1](change_num) [Cheeseburger](change)
+    - change [2](change_num) [Big Mac](change) into [1](change_num) [Cheeseburger](change)
+    - change [3](change_num) [Big Mac](change) into [1](change_num) [Cheeseburger](change)
+    - change [4](change_num) [Big Mac](change) into [1](change_num) [Cheeseburger](change)
+    - change [5](change_num) [Big Mac](change) into [1](change_num) [Cheeseburger](change)
+    - change [one]{"entity": "change_num", "value": "1"} [Coke](change) into [one]{"entity": "change_num", "value": "1"} [Sprite](change)
+    - change [one]{"entity": "change_num", "value": "1"} [Sprite](change) into [one]{"entity": "change_num", "value": "1"} [Coke](change)
+    - change [one]{"entity": "change_num", "value": "1"} [Ice Latte](change) into [one]{"entity": "change_num", "value": "1"} [Coke](change)
+    - change [one]{"entity": "change_num", "value": "1"} [Apple Juice](change) into [one]{"entity": "change_num", "value": "1"} [Coke](change)
+    - change [one]{"entity": "change_num", "value": "1"} [Strawberry Sundae](change) into [one]{"entity": "change_num", "value": "1"} [Coke](change)
+    - change [1](change_num) [Coke](change) into [1](change_num) [Sprite](change)
+    - change [2](change_num) [Coke](change) into [1](change_num) [Sprite](change)
+    - change [3](change_num) [Coke](change) into [1](change_num) [Sprite](change)
+    - change [4](change_num) [Coke](change) into [1](change_num) [Sprite](change)
+    - change [5](change_num) [Coke](change) into [1](change_num) [Sprite](change)
+    - [one]{"entity": "change_num", "value": "1"}
+    - [two]{"entity": "change_num", "value": "2"}
+    - [three]{"entity": "change_num", "value": "3"}
+    - [four]{"entity": "change_num", "value": "4"}
+    - [five]{"entity": "change_num", "value": "5"}
+
+- intent: remove
+  examples: |
+    - remove [one]{"entity": "remove_num", "value": "1"} [Big Mac](remove)
+    - remove [one]{"entity": "remove_num", "value": "1"} [Cheeseburger](remove)
+    - remove [one]{"entity": "remove_num", "value": "1"} [Chicken Nuggets](remove)
+    - remove [one]{"entity": "remove_num", "value": "1"} [Chicken Salad](remove)
+    - remove [one]{"entity": "remove_num", "value": "1"} [Fries](remove)
+    - remove [one]{"entity": "remove_num", "value": "1"} [Apple Pie](remove)
+    - remove [one]{"entity": "remove_num", "value": "1"} [Bacon Angus](remove)
+    - remove [one]{"entity": "remove_num", "value": "1"} [Classic Angus](remove)
+    - remove [one]{"entity": "remove_num", "value": "1"} [Garden Salad](remove)
+    - remove [one]{"entity": "remove_num", "value": "1"} [McSpicy](remove)
+    - remove [one]{"entity": "remove_num", "value": "1"} [Hash Brown](remove)
+    - remove [1](remove_num) [Big Mac](remove)
+    - remove [2](remove_num) [Big Mac](remove)
+    - remove [3](remove_num) [Big Mac](remove)
+    - remove [4](remove_num) [Big Mac](remove)
+    - remove [5](remove_num) [Big Mac](remove)
+    - remove [one]{"entity": "remove_num", "value": "1"} [Coke](remove)
+    - remove [one]{"entity": "remove_num", "value": "1"} [Sprite](remove)
+    - remove [one]{"entity": "remove_num", "value": "1"} [Ice Latte](remove)
+    - remove [one]{"entity": "remove_num", "value": "1"} [Apple Juice](remove)
+    - remove [one]{"entity": "remove_num", "value": "1"} [Strawberry Sundae](remove)
+    - remove [1](remove_num) [Coke](remove)
+    - remove [2](remove_num) [Coke](remove)
+    - remove [3](remove_num) [Coke](remove)
+    - remove [4](remove_num) [Coke](remove)
+    - remove [5](remove_num) [Coke](remove)
+    - [one]{"entity": "remove_num", "value": "1"}
+    - [two]{"entity": "remove_num", "value": "2"}
+    - [three]{"entity": "remove_num", "value": "3"}
+    - [four]{"entity": "remove_num", "value": "4"}
+    - [five]{"entity": "remove_num", "value": "5"}
+    - delete [one]{"entity": "remove_num", "value": "1"} [Big Mac](remove)
+    - delete [one]{"entity": "remove_num", "value": "1"} [Cheeseburger](remove)
+    - delete [one]{"entity": "remove_num", "value": "1"} [Chicken Nuggets](remove)
+    - delete [one]{"entity": "remove_num", "value": "1"} [Chicken Salad](remove)
+    - delete [one]{"entity": "remove_num", "value": "1"} [Fries](remove)
+    - delete [one]{"entity": "remove_num", "value": "1"} [Apple Pie](remove)
+    - delete [one]{"entity": "remove_num", "value": "1"} [Bacon Angus](remove)
+    - delete [one]{"entity": "remove_num", "value": "1"} [Classic Angus](remove)
+    - delete [one]{"entity": "remove_num", "value": "1"} [Garden Salad](remove)
+    - delete [one]{"entity": "remove_num", "value": "1"} [McSpicy](remove)
+    - delete [one]{"entity": "remove_num", "value": "1"} [Hash Brown](remove)
+    - delete [1](remove_num) [Big Mac](remove)
+    - delete [2](remove_num) [Big Mac](remove)
+    - delete [3](remove_num) [Big Mac](remove)
+    - delete [4](remove_num) [Big Mac](remove)
+    - delete [5](remove_num) [Big Mac](remove)
+    - delete [one]{"entity": "remove_num", "value": "1"} [Coke](remove)
+    - delete [one]{"entity": "remove_num", "value": "1"} [Sprite](remove)
+    - delete [one]{"entity": "remove_num", "value": "1"} [Ice Latte](remove)
+    - delete [one]{"entity": "remove_num", "value": "1"} [Apple Juice](remove)
+    - delete [one]{"entity": "remove_num", "value": "1"} [Strawberry Sundae](remove)
+    - delete [1](remove_num) [Coke](remove)
+    - delete [2](remove_num) [Coke](remove)
+    - delete [3](remove_num) [Coke](remove)
+    - delete [4](remove_num) [Coke](remove)
+
+- synonym: '1'
+  examples: |
+    - one
+
+- synonym: '2'
+  examples: |
+    - two
+
+- synonym: '3'
+  examples: |
+    - three
+
+- synonym: '4'
+  examples: |
+    - four
+
+- synonym: '5'
+  examples: |
+    - five
+
+- synonym: Coke
+  examples: |
+    - coke
+
+- regex: change_num
+  examples: |
+    - \d{1,2}
+
+- regex: drinks_num
+  examples: |
+    - \d{1,2}
+
+- regex: food_num
+  examples: |
+    - \d{1,2}

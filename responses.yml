@@ -1,0 +1,10 @@
+responses:
+   utter_greet:
+       - text: |
+           "Hi! Do you want to start order now?"
+   utter_want_to_order:
+       - text: |
+           "Sure! Here is our menu. Please have a look and type in the name of food that you would like to order!"
+   utter_ordering:
+       - text: |
+           "Sure! Here is your order: {food}"
